@@ -1,0 +1,182 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: white;
+    /* border-bottom: 0.5px #4E4E4E solid; */
+    height: 70px;
+    width: 100%;
+}
+
+.head {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+/* jaini-purva-regular - latin */
+.jaini-purva-regular {
+    font-family: "Jaini Purva", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.open-sans-500 {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.open-sans-600 {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+  
+
+.logo {
+    font-size: 48px;
+    text-decoration: none;
+    color: #1924B1;
+}
+
+.menu_button {
+    font-size: 20px;
+    text-decoration: none;
+    color: #081073;
+}
+
+.banner {
+    height: 484px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.render {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 79px;
+    padding-bottom: 79px;
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+}
+
+.banner_one {
+    z-index: 10;
+    position: relative;
+    height: 326px;
+    min-width: 575px;
+    width: 70%;
+    /* background-color: #4C57D8; */
+    background-image: url("/static/img/banner_block.png");
+    border-radius: 15px;
+    overflow: hidden;
+    padding-left: 50px;
+    max-width: 900px;
+}
+
+.banner_two {
+    z-index: 10;
+    position: relative;
+    height: 326px;
+    width: auto;
+    background: linear-gradient(0.25turn, #FFCC40, #f69d3c);
+    border-radius: 15px;
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.banner_one_text {
+    color: white;
+    font-size: 32px;
+    letter-spacing: -0.06em;
+}
+
+.banner_two_text {
+    color: white;
+    font-size: 32px;
+    letter-spacing: -0.06em;
+}
+
+.content {
+    width: 100%;;
+}
+
+.knigi {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.plates {
+    width: 100%;
+    padding-top: 24px;
+}
+
+.buttons_plate_cl {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.buttons_plate_rw {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+
+.block_one {
+    background-color: white;
+    position: relative;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
+    -moz-box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
+    box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
+    width: 30%;
+    height: 200px;
+}
+
+.text_main {
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+.icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.block_main_text {
+    font-size: 26px;
+    line-height: 32px;
+    color: #1924B1;
+}
