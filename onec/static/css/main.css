@@ -8,9 +8,14 @@ body {
 
 header {
     background-color: white;
-    /* border-bottom: 0.5px #4E4E4E solid; */
+    /* border-bottom: 0.02em #4E4E4E solid; */
+    -webkit-box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
+    -moz-box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
+    box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
     height: 70px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .head {
@@ -79,6 +84,17 @@ header {
     display: flex;
     flex-direction: row;
     gap: 23px;
+    opacity: 0;
+    transform: translate(2%, 5%);
+    animation: ani 2s forwards;
+    position: relative;
+    z-index: 0;
+}
+@keyframes ani {
+    0% {opacity: 0;
+        transform: translate(2%, 5%);}
+    100% {opacity: 1;
+        transform: translate(0, 0);}
 }
 
 .banner_one {
@@ -92,7 +108,8 @@ header {
     border-radius: 15px;
     overflow: hidden;
     padding-left: 50px;
-    max-width: 900px;
+    max-width: 890px;
+    
 }
 
 .banner_two {
@@ -119,7 +136,42 @@ header {
 }
 
 .content {
-    width: 100%;;
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    width: auto;
+    border-bottom: 1px black solid;
+    height: 50px;
+    align-items: center;
+    align-content: center;
+    padding-left: 15px;
+}
+
+.active {
+    height: 60px;
+}
+
+.table_l {
+    width: 20%;
+    height: 90%;
+    /* border: 0.3px black solid; */
+    border-radius: 15px;
+}
+
+.flexible {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.body {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 24px;
 }
 
 .knigi {
@@ -158,6 +210,15 @@ header {
     box-shadow: 0px 0px 10px -1px rgba(25, 36, 177, 0.34);
     width: 30%;
     height: 200px;
+    transform: rotateY(90deg);
+    opacity: 0;
+    animation: ani2 2s forwards;
+}
+@keyframes ani2 {
+    0% {opacity: 0;
+        transform: rotateY(90deg);}
+    100% {opacity: 1;
+        transform: rotateY(0);}
 }
 
 .text_main {

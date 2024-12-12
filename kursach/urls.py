@@ -20,5 +20,6 @@ from onec import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="main")
+    path('', views.index, name="main"),
+    path('guide', views.spravochnik, name="spravochnik")
 ]

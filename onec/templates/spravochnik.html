@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}Справочник{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="body">
+            <div class="flexible">
+                <div class="table_l">
+                    {% for i in table_l %}
+                        {% if i == active %}
+                            <div class="section active open-sans-500">
+                                {{ i }}
+                            </div>
+                        {% else %}
+                            <div class="section open-sans-500">
+                                {{ i }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="table_r">
+                    <h1>aaaaaaaaaaaaa</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
