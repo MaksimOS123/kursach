@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="body">
+        <div class="zag open-sans-600">
+            Регистрация выполнена успешно
+        </div>
+        <div class="cong">
+            <p class="open-sans-600">Здравствуйте, {{ User }}!</p>
+
+            <div class="info open-sans-500">
+                Вы можете перейти в <a href="{% url 'profile' %}" class="link_text">Личный кабинет</a> и настроить свой профиль или приступить к подготовке сдачи экзамена <a href="{% url 'onec_special' %}" class="link_text">1С:Специалист</a>. 
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -17,9 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from onec import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="main"),
-    path('guide', views.spravochnik, name="spravochnik")
+
+    path('login/', auth_views.LoginView.as_view(), name="login"),
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('reg/', views.sign_up, name="reg"),
+
+    path('guide/', views.spravochnik, name="spravochnik"),
+    path('modul/', views.modul, name='modul'),
+    path('cong/', views.cong, name='cong'),
+
+    path('profile/', views.profile, name="profile"),
+    path('onec_special/', views.ex, name="onec_special"),
+    path('onec/', views.onec, name='onec'),
 ]

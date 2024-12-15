@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="body">
+        <div class="zag open-sans-600">
+            Личный кабинет
+        </div>
+        <div class="cong">
+            <div class="profile">
+                <div class="photo">
+                    {% load static %}
+                    <img src="{% static 'img/profile.jpg' %}" style="width: 140px; height: 140px; border-radius: 50%; border: 2px #CB5413 solid;"/>
+                </div>
+                <div class="data">
+                    <div class="col">
+                        <div class="profile_name open-sans-500">
+                            {{ User2.first_name }} {{ User2.last_name }} <a href="#" class="edit_text open-sans-500">Редактировать</a>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="profile_age open-sans-500">
+                                    Возраст: {{ User2.age }}
+                                </div>
+                                <div class="profile_status open-sans-500">
+                                    Статус: {{ User2.status }}
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="profile_work open-sans-500">
+                                    Место работы: {{ User2.work }}
+                                </div>
+                                <div class="profile_special open-sans-500">
+                                    Должность: {{ User2.special }}
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

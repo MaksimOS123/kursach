@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form">
+                {% for error in errors %}
+                    <span class="btn btn-danger open-sans-600   ">{{ error }}</span>
+                {% endfor %}
+
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <span class="btn btn-danger open-sans-600">{{ error|escape }}</span>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <span class="btn btn-danger open-sans-600">{{ error|escape }}</span>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="form-group">
+                    <label for="id_username" class="col-sm-2 col-form-label open-sans-600">Логин</label>
+                    {{ form.user_name }}
+                </div>
+                <div class="form-group">
+                    <label for="id_username" class="col-sm-2 col-form-label open-sans-600">Почта</label>
+                    {{ form.user_email }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Пароль</label>
+                    {{ form.password }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password_conf" class="col-sm-2 col-form-label open-sans-600">Подтверждение пароля</label>
+                    {{ form.password_conf }}
+                </div>
+                
+                <div class="form-group submit">
+                    <button type="submit" class="btn btn-primary  open-sans-600">Зарегистрироваться</button>
+                    <a class="btn btn-outline-success  open-sans-600" href="{% url 'login' %}" role="button">Войти</a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

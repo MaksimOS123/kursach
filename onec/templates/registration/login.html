@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        {% if errors %}
+            {{ errors }}
+        {% endif %}
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            <div class="form">
+                <div class="form-group">
+                    <label for="id_username" class="col-sm-2 col-form-label open-sans-600">Логин</label>
+                    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" class="form-control open-sans-500">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Пароль</label>
+                    <input type="password" name="password" autocomplete="current-password" required="" id="id_password" class="form-control open-sans-500">
+                </div>
+                <div class="form-group submit">
+                    <button type="submit" class="btn btn-primary  open-sans-600">Войти</button>
+                    <a class="btn btn-outline-success  open-sans-600" href="{% url 'reg' %}" role="button">Зарегистрироваться</a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

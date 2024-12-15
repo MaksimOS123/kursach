@@ -5,24 +5,64 @@
 {% block content %}
     <div class="content">
         <div class="body">
+            <div class="zag open-sans-700">
+                Справочник по 1С:Предприятие
+            </div>
+            <div class="podzag open-sans-600" id="podzag">
+                Общие
+            </div>
             <div class="flexible">
                 <div class="table_l">
                     {% for i in table_l %}
-                        {% if i == active %}
-                            <div class="section active open-sans-500">
-                                {{ i }}
+                        {% if i.name == active %}
+                            <div class="section active open-sans-500" onclick="check('{{ i.name }}')" id="{{ i.name }}">
+                                {{ i.text }}
                             </div>
                         {% else %}
-                            <div class="section open-sans-500">
-                                {{ i }}
+                            <div class="section open-sans-500" onclick="check('{{ i.name }}')" id="{{ i.name }}">
+                                {{ i.text }}
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
                 <div class="table_r">
-                    <h1>aaaaaaaaaaaaa</h1>
+                    {% for i in table_r %}
+                        {% if i.name == active %}
+                            <div class="{{ i.name }} visible" style="width: auto;">
+                                <div class="text open-sans-500">
+                                    {% for item in i.text %}
+                                        <p>{{ item }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="{{ i.name }} none">
+                                <div class="text open-sans-500">
+                                    {% for item in i.text %}
+                                        <p>{{ item }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function check(elem) {
+        id = document.getElementsByClassName('active')[0].id;
+        document.getElementsByClassName('active')[0].className = 'section open-sans-500';
+        document.getElementById(elem).className = 'section active open-sans-500';
+        document.getElementById('podzag').innerHTML = document.getElementById(elem).innerHTML;
+        if (id != elem) {
+            document.getElementsByClassName(elem)[0].className = elem+' visible';
+            document.getElementsByClassName(id)[0].className = id+' none';
+        }
+        
+    }
+</script>
 {% endblock %}

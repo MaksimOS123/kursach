@@ -7,11 +7,11 @@
 <div class="content">
     <img src="{% static 'img/banner.png' %}" class="banner"/>
     <div class="render">
-        <div class="banner_one">
+        <div class="banner_one" onclick="goToPage('guide')">
             <p class="banner_one_text open-sans-600">Полный справочник по 1С:Предприятие</p>
             <img src="{% static 'img/knigi.png' %}" class="knigi"/>
         </div>
-        <div class="banner_two">
+        <div class="banner_two" onclick="goToPage('modul')">
             <p class="banner_two_text open-sans-600">Планирование заказов на поставку</p>
             <img src="{% static 'img/fura.png' %}" class="knigi"/>
         </div>
@@ -20,7 +20,7 @@
     <div class="plates">
         <div class="buttons_plate_cl">
             <div class="buttons_plate_rw">
-                <div class="block_one">
+                <div class="block_one" onclick="goToPage('onec')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#CB0B0B"><path d="m480-123.34-46.56-43.17q-107.54-99.7-176.52-169.57-68.97-69.87-108.75-123.1-39.78-53.23-54.64-96.67-14.86-43.44-14.86-87.94 0-90.26 62.28-152.24Q203.22-858 293.79-858q51.36 0 99.72 25.1 48.36 25.11 86.49 73.16 40.44-48.87 87.89-73.57Q615.34-858 666.21-858q90.57 0 152.84 61.97 62.28 61.98 62.28 152.24 0 44.5-14.86 87.94t-54.61 96.61q-39.75 53.18-108.69 123.11-68.94 69.92-176.61 169.62L480-123.34Zm0-91.12q99.81-91.32 164.41-156.01 64.61-64.7 102.23-113.13 37.62-48.43 52.36-85.89 14.74-37.46 14.74-74.38 0-62.98-41.57-104.76-41.58-41.78-105.82-41.78-48.55 0-91.21 29.82-42.65 29.82-65.14 79.26h-60.41q-22.46-49.16-65.38-79.12-42.92-29.96-90.56-29.96-63.86 0-105.62 41.59-41.77 41.59-41.77 105.32 0 36.71 14.78 74.31 14.79 37.6 52.57 85.85 37.77 48.26 102.13 112.99Q380.1-305.62 480-214.46Zm0-288.31Z"/></svg>
                     </div>
@@ -28,7 +28,7 @@
                         <span class="block_main_text open-sans-600">Что такое 1С?</span>
                     </div>
                 </div>
-                <div class="block_one">
+                <div class="block_one" onclick="goToPage('modul')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#1BCB0B"><path d="M45.28-84.93v-803.99h435.13v183.64h434.31v620.35H45.28Zm67.59-67.58h116.31v-116.31H112.87v116.31Zm0-183.9h116.31v-116.05H112.87v116.05Zm0-184.97h116.31v-116.31H112.87v116.31Zm0-183.9h116.31v-116.05H112.87v116.05Zm183.9 552.77h116.05v-116.31H296.77v116.31Zm0-183.9h116.05v-116.05H296.77v116.05Zm0-184.97h116.05v-116.31H296.77v116.31Zm0-183.9h116.05v-116.05H296.77v116.05Zm183.64 552.77h366.72v-485.18H480.41v116.31h91.69v67.58h-91.69v117.39h91.69v67.59h-91.69v116.31ZM670.77-453.8v-67.58h67.59v67.58h-67.59Zm0 184.98v-67.59h67.59v67.59h-67.59Z"/></svg>
                     </div>
@@ -36,12 +36,12 @@
                         <span class="block_main_text open-sans-600">Кому подойдет модуль?</span>
                     </div>
                 </div>
-                <div class="block_one">
+                <div class="block_one" onclick="goToPage('onec_special')">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FF7017"><path d="M162.57-164q-32.52 0-56.21-23.69-23.69-23.7-23.69-56.21v-472.2q0-32.51 23.69-56.21Q130.05-796 162.57-796h634.86q32.52 0 56.21 23.69 23.69 23.7 23.69 56.21v472.2q0 32.51-23.69 56.21Q829.95-164 797.43-164H162.57Zm0-67.59h634.86q4.62 0 8.47-3.85 3.84-3.84 3.84-8.46v-402.61H150.26v402.61q0 4.62 3.84 8.46 3.85 3.85 8.47 3.85ZM300-288.18l-47-46.74 103-104-104-104 48-47 151 151-151 150.74Zm186.54 2.72v-67.59h227.59v67.59H486.54Z"/></svg>
                     </div>
-                    <div class="text_main">     
-                        <span class="block_main_text open-sans-600">Разработчик 1С</span>
+                    <div class="text_main">         
+                        <span class="block_main_text open-sans-600">1С:Специалист</span>
                     </div>
                 </div>
             </div>
@@ -50,5 +50,12 @@
     
 </div>
 
+{% block script %}
+<script>
+    function goToPage(link) {
+        window.location.href = 'http://127.0.0.1:8000/'+link;
+    }
+</script>
+{% endblock %}
 
 {% endblock %}
