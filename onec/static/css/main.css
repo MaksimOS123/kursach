@@ -2,6 +2,8 @@ html {
     overflow-x: hidden;
     /* scrollbar-color: #282E72 #e0e0e0;
     scrollbar-width: thin; */
+    height: 100%;
+    margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -18,6 +20,7 @@ html {
 
 body {
     margin: 0;
+    height: 100%;
 }
 
 header {
@@ -365,9 +368,18 @@ button[type=submit] {
     padding-bottom: 10px;
 }
 
+.wrapper {
+    width: 100%;
+    height: calc(100% - 140px);
+    margin-bottom: 0px;
+}
+
+.push {
+    height: 70px;
+}
+
 footer {
     width: 100%;
-    bottom: 50px;
     position: relative;
     height: 70px;
     background-color: #292929;
@@ -375,7 +387,6 @@ footer {
     text-align: center;
     align-items: center;
     align-content: center;
-
 }
 
 .section {
