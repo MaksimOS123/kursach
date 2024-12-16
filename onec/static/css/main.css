@@ -365,6 +365,19 @@ button[type=submit] {
     padding-bottom: 10px;
 }
 
+footer {
+    width: 100%;
+    bottom: 50px;
+    position: relative;
+    height: 70px;
+    background-color: #292929;
+    color: white;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+}
+
 .section {
     width: auto;
     border-bottom: 1px black solid;
