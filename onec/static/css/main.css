@@ -373,7 +373,7 @@ button[type=submit] {
     align-items: center;
     align-content: center;
     padding-left: 15px;
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: 0.1em;
     animation: ani4 0.5s forwards;
 }

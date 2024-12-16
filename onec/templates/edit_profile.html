@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form">
+                {% for error in errors %}
+                    <span class="btn btn-danger open-sans-600   ">{{ error }}</span>
+                {% endfor %}
+
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <span class="btn btn-danger open-sans-600">{{ error|escape }}</span>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <span class="btn btn-danger open-sans-600">{{ error|escape }}</span>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="form-group">
+                    <label for="id_username" class="col-sm-2 col-form-label open-sans-600">Логин</label>
+                    <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" class="form-control open-sans-500" value="{{ User2.user.username }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="id_username" class="col-sm-2 col-form-label open-sans-600">Почта</label>
+                    <input type="text" name="email" autofocus="" autocapitalize="none" autocomplete="email" maxlength="150" required="" id="id_email" class="form-control open-sans-500" value="{{ User2.user.email }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Имя</label>
+                    <input type="text" name="first_name" autofocus="" autocapitalize="none" autocomplete="first_name" maxlength="150" required="" id="id_first_name" class="form-control open-sans-500" value="{{ User2.first_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Фамилия</label>
+                    <input type="text" name="last_name" autofocus="" autocapitalize="none" autocomplete="last_name" maxlength="150" required="" id="id_last_name" class="form-control open-sans-500" value="{{ User2.last_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Возраст</label>
+                    <input type="text" name="age" autofocus="" autocapitalize="none" autocomplete="age" maxlength="150" required="" id="id_age" class="form-control open-sans-500" value="{{ User2.age }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Место работы</label>
+                    <input type="text" name="work" autofocus="" autocapitalize="none" autocomplete="work" maxlength="150" required="" id="id_work" class="form-control open-sans-500" value="{{ User2.work }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Должность</label>
+                    <input type="text" name="special" autofocus="" autocapitalize="none" autocomplete="special" maxlength="150" required="" id="id_special" class="form-control open-sans-500" value="{{ User2.special }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-sm-2 col-form-label open-sans-600">Статус</label>
+                    <input type="text" name="status" autofocus="" autocapitalize="none" autocomplete="status" maxlength="150" required="" id="id_status" class="form-control open-sans-500" value="{{ User2.status }}" readonly>
+                </div>
+                
+                <div class="form-group submit">
+                    <button type="submit" class="btn btn-primary  open-sans-600">Подтвердить</button>
+                    <a class="btn btn-outline-success  open-sans-600" href="{% url 'profile' %}" role="button">Отмена</a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

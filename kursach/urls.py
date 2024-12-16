@@ -32,6 +32,7 @@ urlpatterns = [
     path('cong/', views.cong, name='cong'),
 
     path('profile/', views.profile, name="profile"),
+    path('edit/', views.edit, name="edit"),
     path('onec_special/', views.ex, name="onec_special"),
     path('onec/', views.onec, name='onec'),
 ]

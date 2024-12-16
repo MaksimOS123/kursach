@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from onec.models import UserProfile
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -113,6 +114,40 @@ def profile(request):
     context['User2'] = user
 
     return render(request, 'profile.html', context)
+
+@login_required
+def edit(request):
+    context = {}
+    context['errors'] = []
+
+    if not request.user.is_anonymous:
+        context['User'] = request.user
+
+    user = UserProfile.objects.get(user=request.user)
+    context['User2'] = user
+
+    if request.method == "POST":
+        if request.POST.get('username') == user.user.username:
+            e = request.POST.get('email')
+            f_n = request.POST.get('first_name')
+            l_n = request.POST.get('last_name')
+            ae = request.POST.get('age')
+            w = request.POST.get('work')
+            s = request.POST.get('special')
+
+            request.user.email = e
+            request.user.save()
+            user.first_name = f_n
+            user.last_name = l_n
+            user.age = ae
+            user.work = w
+            user.special = s
+            user.save()
+            return HttpResponseRedirect('/profile/')
+        else:
+            context['errors'].append('Нельзя менять логин')
+
+    return render(request, 'edit_profile.html', context)
 
 
 def ex(request):

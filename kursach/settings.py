@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i^g2o)f0qine5br*=&#p@u7*uuv2ijba_u5fh24(xve*sfya*(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sitekpk.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -119,7 +119,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/cong/'
+LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Default primary key field type
